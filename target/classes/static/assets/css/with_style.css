@@ -1,0 +1,230 @@
+.action-buttons {
+  font-size: 0.85em;
+}
+#like-btn {
+color: rgb(59, 83, 182) !important;
+text-align: center;
+padding: 3px 3px 3px 3px;
+border-radius: 30px;
+-webkit-transition-duration: 0.2s; /* Safari */
+transition-duration: 0.2s;
+}
+
+#like-btn .badge {
+  background-color: rgb(59, 83, 182);
+}
+
+#like-btn:hover {
+color: rgb(59, 83, 185) !important;
+background-color:rgba(59, 83, 185, 0.2);
+border: 1px solid rgb(59, 83, 185) ;
+padding: 2px 2px 2px 2px;
+text-decoration: none;
+}
+
+#dislike-btn {
+color: #bd2130 !important;
+text-align: center;
+padding: 3px 3px 3px 3px;
+border-radius: 30px;
+-webkit-transition-duration: 0.2s; /* Safari */
+transition-duration: 0.2s;
+}
+
+#dislike-btn .badge {
+  background-color: rgba(133,9,30,0.7);
+}
+
+#dislike-btn:hover {
+color: #bd2130 !important;
+background-color:rgba(133,9,30,0.2);
+border: 1px solid #bd2130;
+padding: 2px 2px 2px 2px;
+text-decoration: none;
+}
+
+#views-btn {
+color: rgba(98, 96, 98, 1) !important;
+text-align: center;
+padding: 3px 3px 3px 3px;
+border-radius: 30px;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+}
+
+#views-btn .badge {
+  background-color: rgba(98, 96, 98, 1)
+}
+
+#views-btn:hover {
+color: rgba(98, 96, 98, 1) !important;
+background-color:rgba(125, 125, 136, 0.2);
+text-decoration: none;
+}
+
+#share-btn {
+  color: rgba(147, 149, 46, 1) !important;
+  text-align: center;
+  padding: 3px 3px 3px 3px;
+  border-radius: 30px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+#share-btn .badge {
+  background-color: rgba(147, 149, 46, 1);
+}
+
+#share-btn:hover {
+color: rgba(147, 149, 46, 1) !important;
+background-color:rgba(147, 149, 46, 0.2);
+text-decoration: none;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  color: white;
+}
+.figure {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.figure:hover img{
+  opacity: 0.9;
+  filter: alpha(opacity=50);
+}
+.figure:hover .menu-icon {
+  display: inline;
+}
+
+.txt-post .menu-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline;
+  color: black;
+}
+
+#popover-content{
+  font-size: 0.85em;
+}
+
+#popover-content:hover #popover-content:active{
+  display: block;
+}
+
+#edit-btn {
+  color: rgba(98, 96, 98, 1);
+}
+#edit-btn:hover {
+  text-decoration: none !important;
+  color: rgb(0, 0, 0);
+}
+
+#delete-btn {
+  color: rgba(98, 96, 98, 1);
+}
+#delete-btn:hover {
+  text-decoration: none !important;
+  color: rgb(0, 0, 0);
+}
+
+#make-private {
+  color: rgba(98, 96, 98, 1);
+}
+#make-private:hover{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+#username {
+    color: lightseagreen;
+}
+
+#username:hover{
+  text-decoration: underline;
+}
+
+.txt-post .menu-icon:hover {
+  color: rgb(64, 24, 212);
+}
+
+.new-post-header input{
+  border:none;
+  border-bottom: 1px solid lightgrey;
+  width: 80%;
+  padding-left: 30px;
+}
+.new-post-header input:focus {
+  outline:  none;
+}
+
+
+.new-post-header .input-group-text {
+  background-color: inherit;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0px;
+  margin-left: 30%;
+}
+
+.new-post textarea {
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 30px 30px 30px 30px;
+  resize: none;
+}
+
+.new-post textarea:focus {
+  overflow: none !important;
+}
+
+.action-icons .material-icons {
+    font-size: 36px;
+    color: rgb(59, 55, 58);
+    border: 1px solid;
+    padding: 2px 2px 2px 2px;
+    margin: 1px 1px 1px 1px;
+    border-radius: 50%;
+}
+
+.action-icons .material-icons:hover {
+    background-color: rgba(59, 55, 58, 0.1);
+    border-color: rgba(59, 55, 58, 0.1);
+}
+
+.action-icons button {
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+}
+
+.follow-lnk {
+    color: #007bff;
+}
+
+#follow-btn {
+color: rgb(59, 83, 182) !important;
+text-align: center;
+padding: 3px 3px 3px 3px;
+border-radius: 30px;
+-webkit-transition-duration: 0.2s; /* Safari */
+transition-duration: 0.2s;
+}
+
+#follow-btn .badge {
+  background-color: rgb(59, 83, 182);
+}
+
+#follow-btn:hover {
+color: rgb(59, 83, 185) !important;
+background-color:rgba(59, 83, 185, 0.2);
+border: 1px solid rgb(59, 83, 185) ;
+padding: 2px 2px 2px 2px;
+text-decoration: none;
+}

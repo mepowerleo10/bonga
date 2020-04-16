@@ -1,0 +1,455 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../node_modules/uikit/dist/css/uikit.min.css">
+  <title>Trials</title>
+  <style>
+    html {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    /* html *{
+      font-size: 14px;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    } */
+    .topbar {
+      height: 46px;
+      color: white;
+      background-color: #286b6b;
+    }
+
+    .topbar * {
+      color: white !important;
+      text-transform: none;
+
+    }
+
+    .uk-navbar-container {
+      height: 46px;
+      max-width: 87.115%;
+    }
+
+    .topbar .uk-navbar-container {
+      width: 87.115%;
+      max-width: 87.115%;
+      min-width: 65.153%;
+    }
+
+    .uk-navbar-item,
+    .uk-navbar-nav>li>a,
+    .uk-navbar-toggle {
+      min-height: 46px;
+      max-height: 46px;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: none;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .active {
+      color: #fbc11a;
+    }
+
+    .active * {
+      color: #fbc11a !important;
+    }
+
+    .nav-notifications:hover * {
+      color: #fbc11a !important;
+    }
+
+    .nav-messages:hover * {
+      color: #fbc11a !important;
+    }
+
+    .margin-3px {
+      margin-left: 3px;
+    }
+
+    .color-whitesmoke {
+      color: whitesmoke;
+    }
+
+    .uk-input {
+      border-radius: 20px;
+      border-color: #235c5c;
+      background: #235c5c;
+      width: 230px;
+      padding: 2 2 2 2;
+      /* color: rgba(0, 0, 0, 0.911) !important; */
+    }
+
+    .uk-input:focus {
+      background: #3a5a5a;
+      border-color: #fbc11a;
+    }
+
+    .uk-form-small {
+      font-size: 13px;
+    }
+
+    .avatar {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+    }
+
+    .avatar-container {
+      border-radius: 50%;
+    }
+
+    .avatar:focus,
+    .avatar:active,
+    .avatar:hover {
+      border: 2px solid #fbc11a;
+      border-color: #fbc11a;
+    }
+
+    .bonga-search-container {
+      margin-top: 8px;
+    }
+
+    .profile-dropdown {
+      border: 1px solid lightgrey;
+      box-shadow: 0 3px 7px rgba(0, 0, 0, .15);
+      /* background: whitesmoke; */
+    }
+
+    .profile-dropdown * {
+      color: #14171a !important;
+      font-size: 14px;
+    }
+
+    .sign-out-link * {
+      color: #be3d47 !important;
+    }
+
+    .sign-out {
+      font-weight: bold;
+    }
+
+    .sign-out:hover {
+      border-bottom: 1px solid #be3d47;
+    }
+
+    .settings:hover {
+      border-bottom: 1px solid #14171a;
+    }
+
+    .profile:hover {
+      border-bottom: 1px solid #14171a;
+    }
+
+    /* Body's Main Content Styling */
+    .main-body {
+      background-color: whitesmoke;
+      width: 100%;
+      height: 100%;
+    }
+
+    .main-content {
+      width: 87.115%;
+      max-width: 87.115%;
+      min-width: 65.153%;
+    }
+
+    .main-content .left-content-pane {
+      /* margin-left: 10px; */
+      width: 280px;
+      background-color: white;
+      height: 400px;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      margin-right: 10px;
+      /* padding: 0px 12px 7px 7px; */
+    }
+
+    .main-content .center-content-pane {
+      width: 590px;
+    }
+
+    .main-content .center-content-pane .posts-list {
+      background-color: white;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      margin-right: 10px;
+      padding: 5px 12px 7px 7px;
+    }
+
+    .main-content .right-content-pane {
+      width: 280px;
+      background-color: white;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      padding: 0 12 7 7;
+    }
+
+    #editor {
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      padding: 3px 3px 3px 3px;
+      background: whitesmoke;
+      resize: none;
+    }
+
+    #editor:focus {
+      border: 2px solid #fbc11a;
+      background-color: white;
+    }
+
+    .create-post {
+      background-color: white;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      margin-right: 10px;
+      margin-left: 0px;
+      padding-bottom: 12px;
+    }
+
+    .create-post .newpost-header {
+      border-bottom: 1px solid lightgrey;
+      background-color: whitesmoke;
+      padding: 7px 12px 3px 7px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      font-weight: bold;
+    }
+
+    .create-post .avatar {
+      /* height: 48px;
+      width: 48px; */
+    }
+
+    .post-button {
+      border-radius: 20px;
+      text-transform: none;
+      font-size: 15px;
+      font-weight: bold;
+      color: #fbc11a !important;
+      border-color: #fbc31ab2;
+    }
+
+    .post-button:focus,
+    .post-button:hover,
+    .post-button:active {
+      border: 2px solid #fbc11a;
+    }
+
+    .publicity {
+      padding: 7px 12px 3px 7px;
+      box-shadow: none;
+      border: 1px solid lightgrey;
+    }
+
+    .profile-card-image img {
+      /* height: 174.467px; 
+      width: 279.15 */
+    }
+
+    .no-margin-left {
+      margin-left: 0 !important;
+      padding-left: 2px !important;
+    }
+
+    *+.uk-grid-margin,
+    .uk-grid+.uk-grid,
+    .uk-grid>.uk-grid-margin {
+      margin-top: 0;
+    }
+
+    .bonga-link {
+      color: #227dd8 !important;
+      text-decoration: none !important;
+    }
+
+    .bonga-link:hover,
+    .bonga-link:active {
+      color: #2172c4 !important;
+      text-decoration: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar uk-flex uk-flex-center" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    <div class="navbar uk-navbar-container uk-navbar-transparent" uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+          <li class="active">
+            <a href="#">
+              <span>
+                <img src="../assets/svg/icon.svg" alt="" srcset="" width="36" height="36">
+              </span>
+              <span>bonga</span>
+            </a>
+          </li>
+          <li class="nav-notifications">
+            <a href="">
+              <span>
+                <span class="color-whitesmoke" uk-icon="icon: bell"></span>
+              </span>
+              <span class="margin-3px">Notifications</span>
+            </a>
+          </li>
+          <li class="nav-messages">
+            <a href="">
+              <span><span uk-icon="icon: mail"></span></span>
+              <span class="margin-3px">Messages</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="uk-navbar-right">
+        <div class="bonga-search">
+          <ul class="uk-navbar-nav">
+            <li>
+              <div class="uk-inline bonga-search-container">
+                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
+                <input class="uk-input uk-form-small" placeholder="Search bonga!">
+              </div>
+            </li>
+            <li>
+              <a class="avatar-container uk-button" href="#">
+                <img class="avatar" src="../assets/user-icon-collection/svg/user.svg" alt="Profile">
+              </a>
+              <div class="profile-dropdown" uk-dropdown="mode: click; pos: top-right;">
+                <ul class="uk-nav uk-dropdown-nav uk-list">
+                  <li class="uk-active">
+                    <a class href="#">
+                      <ul>
+                        <li>Mussa Mipawa</li>
+                        <li style="color: #999 !important">@mepowerleo10</li>
+                      </ul>
+                    </a>
+                  </li>
+                  <li class="uk-nav-divider"></li>
+                  <li>
+                    <a class="icon-withtext" href="#">
+                      <span>
+                        <span uk-icon="icon: user"></span>
+                      </span>
+                      <span class="uk-margin-small-left profile">Profile</span>
+                    </a>
+                  </li>
+                  <li class="uk-nav-divider"></li>
+                  <li>
+                    <a href="#">
+                      <span uk-icon="icon:settings"></span>
+                      <span class="uk-margin-small-left settings">Settings</span>
+                    </a>
+                  </li>
+                  <li class="uk-nav-divider"></li>
+                  <li class="sign-out-link">
+                    <a href="#">
+                      <span uk-icon="icon:sign-out"></span>
+                      <span class="uk-margin-small-left sign-out">Sign Out</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-body uk-flex uk-flex-center">
+    <div class="main-content uk-height-1-1 uk-flex uk-flex-center">
+      <div class=" left-content-pane uk-margin-small-top">
+        <div class="profile-card" uk-grid>
+          <div class="uk-inline uk-light profile-card-image uk-width-1-1">
+            <img src="126360-p6110227-pulvar1920.jpg" alt="">
+            <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#">
+              <div class="uk-background-default uk-border-circle uk-box-shadow-medium">
+                <img class="uk-border-circle uk-" src="../assets/user-icon-collection/svg/user.svg" alt="" height="56"
+                  width="56" style="padding: 3px 3px 3px 3px">
+              </div>
+            </a>
+          </div>
+          <div class="uk-width-1-1 uk-margin-remove-top no-margin-left" style="padding-left: 1px;" uk-grid>
+            <div class="uk-width-2-3" uk-grid>
+              <span class="full-name uk-width-1-1 uk-text-bold">Mussa Mipawa</span>
+              <a href="" class="bonga-link">
+                <span class="username uk-width-1-1">
+                  @mepowerleo10
+                </span>
+              </a>
+              <span class="uk-text-meta username uk-width-1-1">
+                since <time datetime="2019-12-20">Dec 20, 2019</time>
+              </span>
+            </div>
+            <div class="uk-width-1-3 ">
+              <div class="uk-column-1-2 uk-column-divider">
+                <p>
+                  Followers<br>
+                  <span class="followers">21</span>
+                </p>
+                <p>b</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center-content-pane uk-margin-small-top">
+        <form>
+          <div class="uk-grid-small uk-flex-middle create-post" uk-grid>
+            <div class="newpost-header uk-width-1-1">
+              Create a post
+            </div>
+            <div class="uk-width-auto">
+              <img class="uk-border-circle" width="40" height="40"
+                src="../assets/user-icon-collection/svg/user.svg"><br><br>
+            </div>
+            <div class="uk-width-expand uk-margin-right uk-margin-small-top">
+              <textarea id="editor" class="uk-textarea" cols="25" rows="4"></textarea>
+              <hr />
+              <div class="action-buttons" uk-grid>
+                <div class="uk-width-2-3">
+                  <a href="">
+                    <span uk-icon="icon:settings"></span>
+                  </a>
+                  <div class="publicity" uk-dropdown="mode: click; pos: top-left;">
+                    <ul class="uk-list uk-list-divider">
+                      <li>
+                        <label><input class="uk-checkbox" type="checkbox"> Private</label>
+                      </li>
+                      <li>
+                        <label><input class="uk-checkbox" type="checkbox"> Share</label>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="uk-width-1-3">
+                  <button class="uk-button uk-button-default 
+                       uk-button-small uk-float-right post-button">
+                    <span uk-icon="icon:plus"></span>
+                    <span class="margin-3px">
+                      Post
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <ul class="posts-list uk-margin-small-top">
+        </ul>
+      </div>
+      <div class="right-content-pane uk-margin-small-top">
+        sdsd
+      </div>
+    </div>
+  </div>
+
+  <script src="../node_modules/uikit/dist/js/uikit.min.js"></script>
+  <script src="../node_modules/uikit/dist/js/uikit-icons.min.js"></script>
+
+</body>
+
+</html>

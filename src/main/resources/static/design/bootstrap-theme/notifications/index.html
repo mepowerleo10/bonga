@@ -1,0 +1,325 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bonga! &middot; notifications</title>
+
+    <link rel="stylesheet" href="../../../assets/fontawesome-5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../custom-bootstrap/custom.css">
+    <link rel="stylesheet" href="../assets/css/improved.css">
+
+    <style>
+        .list-group-item:first-child {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        .list-group-item:last-child {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app-growl"></div>
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary app-navbar mx-auto">
+        <div class="d-flex justify-content-between w-100 mx-5">
+            <a href="../" class="logo-header">
+                <img src="../../../assets/svg/icon.svg" alt="bonga_icon" height="42" width="42" />
+            </a>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                    autocomplete="off">
+                <button class="btn btn-outline-light form-control my-2 my-sm-0 input-group-prepend" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <div class="row ml-auto d-flex justify-content-end" id="navbarSupportedContent">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a href="../" class="nav-link position-relative d-flex justify-content-between">
+                            <i class="fas fa-home my-auto"></i>
+                            <span class="nav-item-badge bg-danger"></span>
+                            <span class="d-none  d-xl-block">Home</span>
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../messages/" class="nav-link position-relative d-flex justify-content-between">
+                            <i class="fas fa-comments my-auto"></i>
+                            <span class="d-none d-xl-block">Conversations</span>
+                            <!-- <strong>(2)</strong> -->
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link position-relative d-flex justify-content-between">
+                            <i class="fas fa-users my-auto"></i>
+                            <span class="d-none d-xl-block">Circles</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item pt-1 mr-1 active">
+                        <a href="#" class="icon-link"><i class="fas fa-bell"></i></a>
+                    </li>
+                    <li class="nav-item ml-2 d-none d-lg-block d-xl-block">
+                        <div class="dropdown my-menu">
+                            <button class="btn btn-outline-primary rounded-circle p-0 dropdown-toggle"
+                                aria-haspopup="true" data-toggle="dropdown">
+                                <img src="../assets/img/avatar-user.png" alt="" class="avatar-me m-0">
+                            </button>
+                            <div class="dropdown-menu mt-3" aria-labelledby="dropdownMenu2">
+                                <a class="dropdown-item" href="../profile/">
+                                    <i class="fas fa-user"></i>
+                                    <span class="split"></span>
+                                    <span>Profile</span>
+                                </a>
+                                <hr class="my-2 mx-2">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cog"></i>
+                                    <span class="split"></span>
+                                    <span>Settings</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span class="split"></span>
+                                    <span>Sign Out</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mx-auto mb-3 main-content w-100">
+        <div class="mx-auto w-100 row">
+            <div class="col-3 mr-3 p-0">
+                <div class="card mb-4 w-100 p-3 rounded-0">
+                    <strong>
+                        Photos &middot;
+                        <small><a href="" class="link-tag normal-link">Edit</a></small>
+                    </strong>
+                    <div class="card-photo-grid w-100 p-0 mt-2">
+                        <div class="row p-0 mb-3">
+                            <a class="card-photo-grid-img col"><img src="../assets/img/iceland.jpg" alt=""></a>
+                            <a class="card-photo-grid-img col"><img src="../assets/img/126360-p6110227-pulvar1920.jpg"
+                                    alt="">
+                            </a>
+                        </div>
+                        <div class="row p-0 mb-3">
+                            <a class="card-photo-grid-img col"><img src="../assets/img/instagram_2.jpg" alt=""></a>
+                            <a class="card-photo-grid-img col"><img
+                                    src="../assets/img/Screenshot from 2019-08-09 13-12-47.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4 w-100 p-3 rounded-0">
+                    <strong>Trending</strong>
+                    <ul class="list-group">
+                        <li class="list-group-item border-0 p-1"><a href="#tag-1"
+                                class="link-tag normal-link">#tag-1</a></li>
+                        <li class="list-group-item border-0 p-1"><a href="#tag-2"
+                                class="link-tag normal-link">#tag-2</a></li>
+                        <li class="list-group-item border-0 p-1"><a href="#tag-3"
+                                class="link-tag normal-link">#tag-3</a></li>
+                        <li class="list-group-item border-0 p-1"><a href="#tag-4"
+                                class="link-tag normal-link">#tag-4</a></li>
+                        <li class="list-group-item border-0 p-1"><a href="#tag-5"
+                                class="link-tag normal-link">#tag-5</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-5 p-0 mx-3">
+                <ul class="list-group mb-4 mx-auto">
+                    <li class="list-group-item">
+                        <h5>Notifications</h5>
+                    </li>
+                    <li class="list-group-item p-3 row mx-0">
+                        <div class="d-flex w-100">
+                            <i class="fas fa-globe-africa my-auto mr-2 text-secondary"></i>
+                            <div class="flex-grow-1 my-auto">
+                                <small class="float-right text-secondary">1 min</small>
+                                <div>
+                                    <a href="#" class="link-tag normal-link">Dave Gamache</a>
+                                    went traveling
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-3 row mx-0">
+                        <div class="d-flex w-100">
+                            <div class="flex-grow-1 my-auto">
+                                <small class="float-right text-secondary">1 min</small>
+                                <div>
+                                    <i class="fas fa-user mr-2 my-auto text-secondary"></i><a href="#"
+                                        class="link-tag normal-link">Ally
+                                        Omary</a>
+                                    and <a href="" class="link-tag normal-link">1 other</a> started following you
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" mt-2 ml-3">
+                            <ul class="list-unstyled avatar-list">
+                                <li class="d-inline">
+                                    <img src="../assets/img/iceland.jpg" alt="">
+                                </li>
+                                <li class="d-inline">
+                                    <img src="../assets/img/avatar-other-1.jpg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-3 row mx-0">
+                        <div class="d-flex w-100">
+                            <i class="fas fa-gamepad my-auto mr-2 text-secondary"></i>
+                            <div class="flex-grow-1 my-auto">
+                                <small class="float-right text-secondary">45 min</small>
+                                <div>
+                                    <a href="#" class="link-tag normal-link">Ronaldo De Lima</a>
+                                    played <a href="" class="link-tag normal-link">Fifa 20</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-3 row mx-0">
+                        <div class="d-flex w-100">
+                            <i class="fas fa-photo-video my-auto mr-2 text-secondary"></i>
+                            <div class="flex-grow-1 my-auto">
+                                <small class="float-right text-secondary">1 hr</small>
+                                <div>
+                                    <a href="#" class="link-tag normal-link">Dave Gamache</a>
+                                    uploaded a photo
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-3">
+                            <img class="w-100" src="../assets/img/iceland.jpg" alt="" style="object-fit: cover;">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-3 ml-3 p-0">
+                <ul class="media-list media-list-users list-group w-100 mx-auto mb-4">
+                    <li class="list-group-item p-2">
+                        <strong>Suggested</strong>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media w-100">
+                            <a href="">
+                                <img class="media-object rounded-circle mr-3" src="../assets/img/avatar-user.png">
+                            </a>
+                            <div class="media-body align-self-center">
+                                <div class="row">
+                                    <div class="col-8 d-flex">
+                                        <a href="" class="text-dark">
+                                            <strong>Jacob Thornton</strong>
+                                            <span class="link-tag">@fat</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-outline-primary btn-sm float-right">
+                                            <span class="icon icon-add-user"></span> Follow
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas fa-map-marker-alt text-secondary"></i>
+                                        <a href="" class="link-tag normal-link">Dodoma, Tanzania</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media w-100">
+                            <a href="">
+                                <img class="media-object rounded-circle mr-3" src="../assets/img/avatar-user.png">
+                            </a>
+                            <div class="media-body align-self-center">
+                                <div class="row">
+                                    <div class="col-8 d-flex">
+                                        <a href="" class="text-dark">
+                                            <strong>Jacob Thornton</strong>
+                                            <span class="link-tag">@fat</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-outline-primary btn-sm float-right">
+                                            <span class="icon icon-add-user"></span> Follow
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas fa-map-marker-alt text-secondary"></i>
+                                        <a href="" class="link-tag normal-link">Dodoma, Tanzania</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="media w-100">
+                            <a href="">
+                                <img class="media-object rounded-circle mr-3" src="../assets/img/avatar-user.png">
+                            </a>
+                            <div class="media-body align-self-center">
+                                <div class="row">
+                                    <div class="col-8 d-flex">
+                                        <a href="" class="text-dark">
+                                            <strong>Jacob Thornton</strong>
+                                            <span class="link-tag">@fat</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-outline-primary btn-sm float-right">
+                                            <span class="icon icon-add-user"></span> Follow
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas fa-map-marker-alt text-secondary"></i>
+                                        <a href="" class="link-tag normal-link">Dodoma, Tanzania</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class=" border-top">
+                    <div class="">
+                        &copy; 2019 bonga!
+                        <a href="#" class="link-tag normal-link m-2">About</a>
+                        <a href="#" class="link-tag normal-link m-2">Help</a>
+                        <a href="#" class="link-tag normal-link m-2">Terms</a>
+                        <a href="#" class="link-tag normal-link m-2">Privacy</a>
+                        <a href="#" class="link-tag normal-link m-2">Cookies</a>
+                        <a href="#" class="link-tag normal-link m-2">Ads </a>
+                        <a href="#" class="link-tag normal-link m-2">Info</a>
+                        <a href="#" class="link-tag normal-link m-2">Brand</a>
+                        <a href="#" class="link-tag normal-link m-2">Blog</a>
+                        <a href="#" class="link-tag normal-link m-2">Status</a>
+                        <a href="#" class="link-tag normal-link m-2">Apps</a>
+                        <a href="#" class="link-tag normal-link m-2">Jobs</a>
+                        <a href="#" class="link-tag normal-link m-2">Advertise</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../assets/js/popper.min.js"></script>
+    <!-- <script src="assets/js/chart.js"></script> -->
+    <script src="../../../assets/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

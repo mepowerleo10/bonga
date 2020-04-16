@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<!-- Bootstrap CSS -->
+	<link rel="shortcut icon" th:href="@{static/assets/ico/favicon.ico}" />
+	<link rel="stylesheet" th:href="@{static/assets/custom-bootstrap/bootstrap/dist/css/bootstrap.css}" />
+	<link rel="stylesheet" th:href="@{static/assets/css/index.css}" />
+	<link rel="stylesheet" th:href="@{static/assets/jquery-ui-1.12.1/jquery-ui.min.css}" />
+	<title>Welcome to bonga! - Chat & Find People</title>
+</head>
+
+<body>
+	<div class="row">
+		<div id="grad1" class="col-md-6 site-map d-block">
+			<a class="py-2 banner" href="#">
+				<h1 class="display-4">
+					<img th:src="@{static/assets/svg/icon.svg}" alt="" style="width: 120px; height: 120px;" /> bonga!
+				</h1> <br /> <br />
+				<div class="about-us"></div>
+			</a>
+		</div>
+		<div class="col-md-6 action-panel text-center justify-content-center row">
+			<div class="col-md-2"></div>
+			<div class="col-md-6">
+
+				<div class="signin shadow p-3 mb-5 bg-white rounded">
+					<form action="#" th:action="@{/login}" method="post">
+						<h1 class="h4 mb-3" style="color: rgba(4, 69, 71, 0.8)">
+							<img th:src="@{static/assets/svg/icon.svg}" alt="" style="width: 48px; height: 48px;" />
+							sign in here!
+						</h1>
+						<label for="inputUsername" class="sr-only">Username</label>
+						<input type="text" id="inputUsername" name="username" class="form-control"
+							placeholder="Username" required autofocus>
+						<br />
+						<label for="inputPassword" class="sr-only">Password</label>
+						<input type="password" id="inputPassword" name="password" class="form-control"
+							placeholder="Password" required>
+						<hr />
+						<input class="btn btn-lg btn-primary btn-block" type="submit" value="Log in" />
+					</form>
+					<br /> <span style="color: rgba(4, 69, 71, 1);">No account?
+						<a href="#">Sign up!</a>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+
+	<div class="footer fixed-bottom">
+		<span style="padding-left: 10%; font-weight: 350; font-size: 10px;">ProjectX
+			© 2018</span>
+	</div>
+
+	<!-- local javascript -->
+	<script th:src="@{static/assets/js/jquery.min.js}"></script>
+	<script th:src="@{static/assets/js/popper.min.js}"></script>
+	<script th:src="@{static/assets/custom-bootstrap/bootstrap/dist/js/bootstrap.js}"></script>
+
+</body>
+
+</html>

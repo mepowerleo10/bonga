@@ -1,0 +1,30 @@
+spring:
+    mvc:
+        view:
+            prefix: /WEB-INF/view
+            suffix: .html
+    messages:
+        basename: validation
+    security:
+        user:
+            name: super
+            password: welcome
+            roles:
+                - MANAGER
+                - USER
+    jpa:
+        hibernate:
+            ddl-auto: update
+    datasource:
+        url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/bonga_db
+        username: super
+        password: welcome
+    session:
+        store-type: redis
+        redis:
+            flush-mode: on-save
+            namespace: spring:session
+    redis:
+        host: localhost
+        password: 
+        port: 6379

@@ -1,0 +1,241 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../custom-bootstrap/custom.min.css">
+    <link rel="stylesheet" href="../assets/fontawesome-5.9.0/css/all.min.css">
+    <title>bonga! Trial Homepage</title>
+
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .navbar {
+            background-color: #286b6b;
+        }
+
+        header {
+            height: 30%;
+        }
+
+        .logo-header {
+            font-size: 20px;
+            color: white;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .logo-header span {
+            margin-left: -2px;
+        }
+
+        .action-group-btns .btn-outline-secondary {
+            color: white;
+            border-color: #fbc11a4a;
+            border-radius: 2px;
+        }
+
+        .action-group-btns .btn-outline-secondary:hover,
+        .split:hover {
+            color: #fff;
+            border-color: #fbc11a;
+            background-color: #286b6b;
+        }
+
+        .action-group-btns .btn-outline-secondary:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: #286b6b;
+            border-color: #f7bb0a;
+        }
+
+        .btn-outline-secondary:focus {
+            box-shadow: none;
+        }
+
+        .split {
+            width: 0;
+            height: 16px;
+            border-right: 1px solid #fbc31a94;
+            margin: 0 8px;
+            box-sizing: border-box;
+        }
+
+        main {
+            color: black;
+        }
+
+        .people-and-communities-banner {
+            font-size: x-large;
+            margin-bottom: 10px;
+        }
+
+        .form-control {
+            border-radius: 0;
+        }
+
+        #search-people {
+            width: 717px;
+        }
+
+        #spinner {
+            display: none;
+        }
+
+        .search-list-group {
+            margin-left: -15px;
+            width: 717px;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .list-group-item:last-child {
+            margin-bottom: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .search-preferences ul .list-group-item {
+            border: none;
+        }
+
+        .col-2 {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="h-100">
+        <header>
+            <div class="navbar fixed-top w-100">
+                <div class="container d-flex justify-content-around w-100">
+                    <div class="logo-header col">
+                        <img src="../assets/svg/icon.svg" alt="bonga_icon" height="48" width="48" />
+                        <span>bonga!</span>
+                    </div>
+                    <div class="container col">
+                        <div class="float-right action-group-btns">
+                            <button class="btn btn-outline-secondary">
+                                <span>Sign In</span>
+                                <span class="split"></span>
+                                <span><i class="fas fa-user"></i></span>
+                            </button>
+                            <button class="btn btn-outline-secondary">Sign Up</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="flex justify-content-center">
+                <div class="w-100 d-flex justify-content-center people-and-communities-banner">
+                    <span class="">Find People, Communities &amp; their Potentials</span>
+                </div>
+                <div class="w-100 d-flex justify-content-center">
+                    <form method="get">
+                        <div class="form-group row">
+                            <div class="input-group">
+                                <input type="text" name="search-people" id="search-people" class="form-control"
+                                    placeholder="Who are you looking for?!" aria-placeholder="Search for people"
+                                    autocomplete="off">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-primary" id="search-btn" type="button"
+                                        onclick="search_people()">
+                                        <i class="fas fa-search text-warning"></i>
+                                        <div id="spinner">
+                                            <div class="spinner-grow text-warning spinner-grow-sm" role="status"><span
+                                                    class="sr-only">Loading...</span>
+                                            </div>
+                                        </div>
+
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-list-group">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item row d-flex">
+                                            <div class="col-2">
+                                                <img src="125496-DSC00874_1920.jpg" alt="user0_username"
+                                                    class="rounded float-left" height="48" width="48">
+                                            </div>
+                                            <div class="d-flex row">
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">
+                                                        <span><i class="fas fa-user"></i></span>
+                                                        <span class="split text-danger"></span>
+                                                        <span>Joseph Mboje</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">
+                                                        Mussa
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        sdsds
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item row d-flex">
+                                            <img src="126360-p6110227-pulvar1920.jpg" alt="user1_username"
+                                                class="rounded float-left" height="48" width="48">
+                                        </li>
+                                        <li class="list-group-item">ds</li>
+                                        <li class="list-group-item">sd</li>
+                                        <li class="list-group-item">ds</li>
+                                    </ul>
+                                </li>
+                                <!-- <li class="list-group-item search-preferences">
+                                    <ul
+                                        class="list-group list-group-horizontal list-group-flush d-flex justify-content-end">
+                                        <li class="list-group-item">
+                                            <div class="btn-group">
+                                                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="true">Region</button>
+                                                <div class="dropdown-menu">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">sd</li>
+                                        <li class="list-group-item">ds</li>
+                                        <li class="list-group-item">sd</li>
+                                        <li class="list-group-item">ds</li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+    <script>
+        function search_people() {
+            var btn = document.getElementById('search-btn');
+            btn.innerHTML = document.getElementById('spinner').innerHTML;
+        }
+    </script>
+</body>
+
+</html>
